@@ -17,41 +17,9 @@
     <div id="card-number" class="card-number"></div>
 </div>
 
-<script>
-    function generateCard() {
-        // Definir palos y valores
-        const suits = ['spade', 'club', 'heart', 'diamond'];
-        const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
-        const icons = {
-            'spade': '♠',
-            'club': '♣',
-            'heart': '♥',
-            'diamond': '♦'
-        };
+<!-- Enlace al archivo JavaScript externo -->
+<script src="app.js"></script>
 
-        // Generar palo y valor aleatorio
-        const randomSuitIndex = Math.floor(Math.random() * 4); // Genera un número entre 0 y 3
-        const randomValueIndex = Math.floor(Math.random() * 13); // Genera un número entre 0 y 12
-
-        const randomSuit = suits[randomSuitIndex];
-        const randomValue = values[randomValueIndex];
-
-        // Obtener el contenedor de la carta
-        const card = document.getElementById('card');
-        const cardNumber = document.getElementById('card-number');
-        card.className = `card ${randomSuit}`; // Aplicar clase del palo
-
-        // Establecer íconos
-        const topLeftIcon = card.querySelector('.top-left');
-        const bottomRightIcon = card.querySelector('.bottom-right');
-
-        topLeftIcon.textContent = icons[randomSuit];
-        bottomRightIcon.textContent = icons[randomSuit];
-
-        // Establecer el número en el centro
-        cardNumber.textContent = randomValue;
-    }
-</script>
 
 </body>
 </html>
