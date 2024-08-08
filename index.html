@@ -7,25 +7,39 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
-        .container-center {
+        body {
+            margin: 0;
             height: 100vh;
+            background-color: #4caf50; /* Fondo verde para toda la página */
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #4caf50; /* Fondo verde */
         }
         .card {
-            width: 150px;
-            height: 200px;
+            width: 250px;
+            height: 350px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2rem;
+            font-size: 4rem;
             color: black; /* Color del texto dentro de la carta */
             position: relative;
-            border: 1px solid #ccc;
+            border: 1px solid #fff; /* Borde blanco para la carta */
             border-radius: 8px;
             background-color: #fff; /* Fondo blanco de la carta */
+        }
+        .card .icon {
+            position: absolute;
+            font-size: 3rem;
+        }
+        .card .top-left {
+            top: 10px;
+            left: 10px;
+        }
+        .card .bottom-right {
+            bottom: 10px;
+            right: 10px;
+            transform: rotate(180deg);
         }
         .spade {
             color: #000;
@@ -39,28 +53,14 @@
         .diamond {
             color: #d32f2f;
         }
-        .card .icon {
-            position: absolute;
-            font-size: 4rem;
-        }
-        .card .top-left {
-            top: 10px;
-            left: 10px;
-        }
-        .card .bottom-right {
-            bottom: 10px;
-            right: 10px;
-            transform: rotate(180deg);
-        }
     </style>
 </head>
 <body onload="generateCard()">
 
-<div class="container-center">
-    <div id="card" class="card">
-        <div class="icon top-left"></div>
-        <div class="icon bottom-right"></div>
-    </div>
+<div id="card" class="card">
+    <div class="icon top-left"></div>
+    <div class="icon bottom-right"></div>
+    <div id="card-number" class="card-number"></div>
 </div>
 
 <script>
@@ -84,14 +84,18 @@
 
         // Obtener el contenedor de la carta
         const card = document.getElementById('card');
+        const cardNumber = document.getElementById('card-number');
         card.className = `card ${randomSuit}`; // Aplicar clase del palo
 
         // Establecer íconos
         const topLeftIcon = card.querySelector('.top-left');
         const bottomRightIcon = card.querySelector('.bottom-right');
 
-        topLeftIcon.textContent = `${randomValue} ${icons[randomSuit]}`;
-        bottomRightIcon.textContent = `${icons[randomSuit]} ${randomValue}`;
+        topLeftIcon.textContent = icons[randomSuit];
+        bottomRightIcon.textContent = icons[randomSuit];
+
+        // Establecer el número en el centro
+        cardNumber.textContent = randomValue;
     }
 </script>
 
