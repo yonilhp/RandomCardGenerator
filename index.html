@@ -6,54 +6,7 @@
     <title>Carta Aleatoria</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            background-color: #4caf50; /* Fondo verde para toda la página */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .card {
-            width: 250px;
-            height: 350px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 4rem;
-            color: black; /* Color del texto dentro de la carta */
-            position: relative;
-            border: 1px solid #fff; /* Borde blanco para la carta */
-            border-radius: 8px;
-            background-color: #fff; /* Fondo blanco de la carta */
-        }
-        .card .icon {
-            position: absolute;
-            font-size: 3rem;
-        }
-        .card .top-left {
-            top: 10px;
-            left: 10px;
-        }
-        .card .bottom-right {
-            bottom: 10px;
-            right: 10px;
-            transform: rotate(180deg);
-        }
-        .spade {
-            color: #000;
-        }
-        .club {
-            color: #333;
-        }
-        .heart {
-            color: #e53935;
-        }
-        .diamond {
-            color: #d32f2f;
-        }
-    </style>
+    <link href="/styles.css" rel="stylesheet">
 </head>
 <body onload="generateCard()">
 
